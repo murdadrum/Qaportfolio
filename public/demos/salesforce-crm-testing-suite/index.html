@@ -3,70 +3,154 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Salesforce CRM Testing Suite Demo</title>
+    <title>Salesforce CRM Testing Suite</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
-    <style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;font-family:"Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;background:radial-gradient(circle at top, #1e293b 0%, #0f172a 45%, #020617 100%);color:#e2e8f0;min-height:100vh;}a{color:#7dd3fc;text-decoration:none}a:hover{color:#38bdf8}.page{max-width:1100px;margin:0 auto;padding:48px 20px 64px;}header{display:flex;flex-direction:column;gap:16px;margin-bottom:32px}.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(59,130,246,0.16);color:#bfdbfe;font-size:12px;text-transform:uppercase;letter-spacing:.14em}.title{font-size:40px;line-height:1.05;margin:0}.subtitle{font-size:18px;color:#94a3b8;max-width:720px}.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}.card{padding:18px;border-radius:16px;background:rgba(15,23,42,0.7);border:1px solid rgba(148,163,184,0.12);box-shadow:0 18px 40px rgba(2,6,23,.45);} .metric{font-size:24px;font-weight:600}.label{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#94a3b8}.section{margin-top:28px}.section h2{font-size:18px;text-transform:uppercase;letter-spacing:.16em;color:#a5b4fc;margin:0 0 12px}.pill{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;background:rgba(148,163,184,.16);font-size:12px;color:#e2e8f0}.pills{display:flex;flex-wrap:wrap;gap:8px}.list{display:grid;gap:10px}.list-item{display:flex;gap:10px;align-items:flex-start}.dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,#38bdf8,#818cf8);margin-top:6px}.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.cta{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(56,189,248,.16);color:#bae6fd;font-size:13px}.flow{display:flex;flex-wrap:wrap;gap:10px}.flow span{padding:6px 12px;border-radius:12px;background:rgba(34,197,94,.14);color:#bbf7d0;font-size:12px}footer{margin-top:40px;color:#64748b;font-size:12px} .fade-in{animation:fadeUp .8s ease both}@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}@media (max-width:700px){.title{font-size:30px}.top-bar{flex-direction:column;align-items:flex-start;gap:12px}}</style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>:root{color-scheme:dark;--bg-900:#0b1220;--bg-800:#0f1b2d;--bg-700:#14243b;--text-100:#e2e8f0;--text-300:#cbd5f5;--text-500:#94a3b8;--accent-500:#38bdf8;--accent-400:#7dd3fc;--accent-300:#a5b4fc;--success-400:#4ade80}*{box-sizing:border-box}body{margin:0;font-family:"Space Grotesk","IBM Plex Sans",system-ui,sans-serif;background:radial-gradient(circle at top,#1d2b4a 0%,#0b1220 48%,#020617 100%);color:var(--text-100);min-height:100vh}a{color:var(--accent-400);text-decoration:none}a:hover{color:var(--accent-500)}.page{max-width:1120px;margin:0 auto;padding:48px 20px 72px}.top-bar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(59,130,246,.18);color:#c7d2fe;font-size:12px;text-transform:uppercase;letter-spacing:.18em}.cta{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(56,189,248,.16);color:#bae6fd;font-size:13px}header{display:grid;gap:20px;margin-bottom:36px}.title{font-size:clamp(32px,4vw,44px);line-height:1.05;margin:0}.subtitle{font-size:18px;color:var(--text-500);max-width:760px;margin:0}.meta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.pill{display:inline-flex;align-items:center;padding:6px 12px;border-radius:999px;background:rgba(148,163,184,.16);font-size:12px;color:var(--text-100)}.section{margin-top:32px}.section h2{font-size:16px;text-transform:uppercase;letter-spacing:.2em;color:var(--accent-300);margin:0 0 14px}.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.card{padding:18px;border-radius:16px;background:rgba(15,23,42,.7);border:1px solid rgba(148,163,184,.12);box-shadow:0 18px 40px rgba(2,6,23,.45)}.card h3{margin:0 0 8px;font-size:16px}.card p{margin:0;color:var(--text-500);font-size:14px;line-height:1.5}.list{display:grid;gap:10px;margin:0;padding:0}.list-item{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--text-300)}.dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent-500),var(--accent-300));margin-top:6px;flex-shrink:0}.kpi{display:grid;gap:6px;border-radius:14px;padding:14px;background:rgba(20,36,59,.6)}.kpi span{color:var(--text-500);font-size:12px;text-transform:uppercase;letter-spacing:.14em}.kpi strong{font-size:16px;color:var(--text-100)}.pipeline{display:grid;gap:12px}.pipeline-step{display:grid;gap:6px;padding:14px 16px;border-radius:14px;background:rgba(34,197,94,.12);color:#dcfce7}.pipeline-step span{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#bbf7d0}.code-block{background:#0b1325;border:1px solid rgba(148,163,184,.2);border-radius:16px;padding:16px;font-family:"SF Mono","JetBrains Mono",monospace;font-size:12px;color:#e2e8f0;white-space:pre-wrap}.flow{display:flex;flex-wrap:wrap;gap:10px}.flow span{padding:6px 12px;border-radius:12px;background:rgba(34,197,94,.14);color:#bbf7d0;font-size:12px}footer{margin-top:40px;color:var(--text-500);font-size:12px}@media (max-width:700px){.top-bar{flex-direction:column;align-items:flex-start;gap:12px}}</style>
   </head>
   <body>
     <div class="page">
       <div class="top-bar">
-        <span class="badge">QA Demo</span>
+        <span class="badge">QA Case Study</span>
         <a class="cta" href="/">← Back to Portfolio</a>
       </div>
-      <header class="fade-in">
+
+      <header>
         <h1 class="title">Salesforce CRM Testing Suite</h1>
-        <p class="subtitle">Testing framework for Salesforce custom objects, workflows, and integrations.</p>
-        <div class="pills"><span class="pill">Selenium</span><span class="pill">Java</span><span class="pill">Salesforce API</span><span class="pill">SOQL</span><span class="pill">REST Assured</span></div>
+        <p class="subtitle">Automation framework for Salesforce customizations, integrations, and data migrations.</p>
+        <div class="meta">
+          <span class="pill">Selenium</span><span class="pill">Java</span><span class="pill">Salesforce API</span><span class="pill">SOQL</span><span class="pill">REST Assured</span>
+          <a class="pill" href="https://github.com/murdadrum/salesforce-crm-testing-suite" target="_blank" rel="noreferrer">GitHub Repo</a>
+        </div>
       </header>
+
       <section class="section">
-        <h2>Run Snapshot</h2>
+        <h2>Executive Summary</h2>
         <div class="grid">
-        <div class="card fade-in">
-          <div class="label">Orgs</div>
-          <div class="metric">4</div>
+          <div class="card">
+            <h3>Challenge</h3>
+            <p>Custom objects and integrations introduced regressions across sandboxes with manual QA bottlenecks.</p>
+          </div>
+          <div class="card">
+            <h3>Solution</h3>
+            <p>Built UI + API automation with reusable data seeding for UAT and regression coverage.</p>
+          </div>
+          <div class="card">
+            <h3>Impact</h3>
+            <p>Standardized validation across environments and improved release quality for CRM workflows.</p>
+          </div>
         </div>
-        <div class="card fade-in">
-          <div class="label">Flows</div>
-          <div class="metric">27</div>
-        </div>
-        <div class="card fade-in">
-          <div class="label">UAT Pass</div>
-          <div class="metric">97%</div>
-        </div></div>
       </section>
+
       <section class="section">
-        <h2>Demo Highlights</h2>
+        <h2>Coverage Map</h2>
+        <div class="grid">
         <div class="card">
-          <div class="list">
-        <div class="list-item">
-          <span class="dot"></span>
-          <span>Custom component testing</span>
+          <h3>Custom Objects</h3>
+          <p>Validation rules, workflows, and process builders.</p>
         </div>
-        <div class="list-item">
-          <span class="dot"></span>
-          <span>Integration testing</span>
+        <div class="card">
+          <h3>Integrations</h3>
+          <p>REST/SOAP integrations and middleware checks.</p>
         </div>
-        <div class="list-item">
-          <span class="dot"></span>
-          <span>Data migration validation</span>
+        <div class="card">
+          <h3>Data Migration</h3>
+          <p>ETL verification and field-level validation.</p>
         </div>
-        <div class="list-item">
-          <span class="dot"></span>
-          <span>User acceptance testing</span>
+        <div class="card">
+          <h3>User Workflows</h3>
+          <p>Lead to opportunity, case management, and approvals.</p>
         </div></div>
-        </div>
       </section>
+
       <section class="section">
-        <h2>Artifacts</h2>
-        <div class="pills"><span class="pill">UAT Checklist</span><span class="pill">Data Validation</span><span class="pill">Integration Logs</span></div>
+        <h2>Automation Layers</h2>
+        <div class="grid">
+        <div class="card">
+          <h3>UI Automation</h3>
+          <p>Selenium tests for critical workflows.</p>
+        </div>
+        <div class="card">
+          <h3>API Tests</h3>
+          <p>REST Assured validation for integrations.</p>
+        </div>
+        <div class="card">
+          <h3>Data Validation</h3>
+          <p>SOQL queries for data consistency.</p>
+        </div>
+        <div class="card">
+          <h3>UAT Packs</h3>
+          <p>User acceptance smoke coverage.</p>
+        </div></div>
       </section>
+
+      <section class="section">
+        <h2>Quality Signals Tracked</h2>
+        <div class="grid">
+        <div class="kpi">
+          <span>Data Quality</span>
+          <strong>Field validation accuracy across migrations.</strong>
+        </div>
+        <div class="kpi">
+          <span>Integration</span>
+          <strong>Endpoint pass rate and SLA checks.</strong>
+        </div>
+        <div class="kpi">
+          <span>Workflow</span>
+          <strong>Approval and routing success rate.</strong>
+        </div>
+        <div class="kpi">
+          <span>Regression</span>
+          <strong>UAT pass rate per release.</strong>
+        </div></div>
+      </section>
+
+      <section class="section">
+        <h2>CI/CD Pipeline Gates</h2>
+        <div class="pipeline">
+        <div class="pipeline-step">
+          <span>Stage 1</span>
+          Sandbox refresh + data seeding.
+        </div>
+        <div class="pipeline-step">
+          <span>Stage 2</span>
+          API smoke tests for integrations.
+        </div>
+        <div class="pipeline-step">
+          <span>Stage 3</span>
+          UI regression on key workflows.
+        </div>
+        <div class="pipeline-step">
+          <span>Stage 4</span>
+          UAT sign-off + release readiness.
+        </div></div>
+      </section>
+
+      <section class="section">
+        <h2>Artifacts & Reporting</h2>
+        <div class="flow"><span>SOQL Validation Report</span><span>Integration Logs</span><span>UAT Checklist</span><span>Release Notes</span></div>
+      </section>
+
+      <section class="section">
+        <h2>Sample SOQL Validation</h2>
+        <div class="code-block">SELECT Id, StageName, Amount
+FROM Opportunity
+WHERE StageName IN ('Prospecting', 'Closed Won')
+AND CloseDate = THIS_QUARTER</div>
+      </section>
+
       <section class="section">
         <h2>Validation Flow</h2>
-        <div class="flow"><span>Build -&gt; Validate -&gt; Deploy</span></div>
+        <div class="flow"><span>Seed data</span><span>Run integration tests</span><span>Execute UI regression</span><span>Collect sign-off</span></div>
       </section>
-      <footer>Demo scaffold for portfolio showcase. Replace placeholders with real outputs.</footer>
+
+      <footer>
+        Portfolio case study scaffold. Replace placeholders with live outputs when ready.
+      </footer>
     </div>
   </body>
 </html>
