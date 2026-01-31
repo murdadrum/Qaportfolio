@@ -1,0 +1,36 @@
+[submodule "project-repos/accessibility-testing-automation"]
+	path = project-repos/accessibility-testing-automation
+	url = https://github.com/murdadrum/accessibility-testing-automation.git
+[submodule "project-repos/ai-llm-quality-assurance-platform"]
+	path = project-repos/ai-llm-quality-assurance-platform
+	url = https://github.com/murdadrum/ai-llm-quality-assurance-platform.git
+[submodule "project-repos/bi-dashboard-validation-framework"]
+	path = project-repos/bi-dashboard-validation-framework
+	url = https://github.com/murdadrum/bi-dashboard-validation-framework.git
+[submodule "project-repos/cloud-infrastructure-testing-framework"]
+	path = project-repos/cloud-infrastructure-testing-framework
+	url = https://github.com/murdadrum/cloud-infrastructure-testing-framework.git
+[submodule "project-repos/devops-pipeline-optimization"]
+	path = project-repos/devops-pipeline-optimization
+	url = https://github.com/murdadrum/devops-pipeline-optimization.git
+[submodule "project-repos/enterprise-ecommerce-test-automation-suite"]
+	path = project-repos/enterprise-ecommerce-test-automation-suite
+	url = https://github.com/murdadrum/enterprise-ecommerce-test-automation-suite.git
+[submodule "project-repos/microservices-api-testing-platform"]
+	path = project-repos/microservices-api-testing-platform
+	url = https://github.com/murdadrum/microservices-api-testing-platform.git
+[submodule "project-repos/mobile-app-testing-framework"]
+	path = project-repos/mobile-app-testing-framework
+	url = https://github.com/murdadrum/mobile-app-testing-framework.git
+[submodule "project-repos/performance-load-testing-platform"]
+	path = project-repos/performance-load-testing-platform
+	url = https://github.com/murdadrum/performance-load-testing-platform.git
+[submodule "project-repos/salesforce-crm-testing-suite"]
+	path = project-repos/salesforce-crm-testing-suite
+	url = https://github.com/murdadrum/salesforce-crm-testing-suite.git
+[submodule "project-repos/security-testing-automation"]
+	path = project-repos/security-testing-automation
+	url = https://github.com/murdadrum/security-testing-automation.git
+[submodule "project-repos/web-crawler-data-scraper"]
+	path = project-repos/web-crawler-data-scraper
+	url = https://github.com/murdadrum/web-crawler-data-scraper.git
