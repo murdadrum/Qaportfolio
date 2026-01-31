@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mobile App Testing Framework</title>
+    <title>Mobile Web Testing Framework — Remotely Amused</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -21,9 +21,10 @@
 
       <header>
         <h1 class="title">Mobile App Testing Framework</h1>
-        <p class="subtitle">Cross-platform mobile testing with Appium, device lab orchestration, and CI integration.</p>
+        <p class="subtitle">Mobile web testing for Remotely Amused (remotelyamused.com) using Appium, device lab orchestration, and CI integration.</p>
         <div class="meta">
           <span class="pill">Appium</span><span class="pill">Java</span><span class="pill">TestNG</span><span class="pill">Jenkins</span><span class="pill">Sauce Labs</span>
+          <a class="pill" href="https://remotelyamused.com/" target="_blank" rel="noreferrer">Target: RemotelyAmused.com</a>
           <a class="pill" href="https://github.com/murdadrum/mobile-app-testing-framework" target="_blank" rel="noreferrer">GitHub Repo</a>
         </div>
       </header>
@@ -33,15 +34,15 @@
         <div class="grid">
           <div class="card">
             <h3>Challenge</h3>
-            <p>Mobile regressions surfaced late due to device fragmentation and slow manual validation cycles.</p>
+            <p>Mobile visitors rely on a fast, reliable web experience, but responsive issues and form failures can break conversions.</p>
           </div>
           <div class="card">
             <h3>Solution</h3>
-            <p>Implemented Appium-driven suites with device farm coverage and stable test data orchestration.</p>
+            <p>Implemented Appium-driven mobile web suites across iOS Safari and Android Chrome with repeatable smoke and regression packs.</p>
           </div>
           <div class="card">
             <h3>Impact</h3>
-            <p>Expanded device coverage and reduced release risks with repeatable mobile regression packs.</p>
+            <p>Improved release confidence for Remotely Amused with device matrix coverage and consistent CI reporting.</p>
           </div>
         </div>
       </section>
@@ -50,20 +51,20 @@
         <h2>Coverage Map</h2>
         <div class="grid">
         <div class="card">
-          <h3>Onboarding &amp; Auth</h3>
-          <p>OTP, biometric login, and session recovery.</p>
+          <h3>Navigation &amp; Hero</h3>
+          <p>Header navigation, hero CTA, and page routing on mobile.</p>
         </div>
         <div class="card">
-          <h3>Core Journeys</h3>
-          <p>Search, cart, checkout, and in-app messaging.</p>
+          <h3>Content &amp; Media</h3>
+          <p>Service sections, imagery, and responsive typography checks.</p>
         </div>
         <div class="card">
-          <h3>Device Coverage</h3>
-          <p>iOS/Android across screen sizes and OS versions.</p>
+          <h3>Forms &amp; Conversion</h3>
+          <p>Contact/booking forms, validation states, and confirmations.</p>
         </div>
         <div class="card">
-          <h3>Stability</h3>
-          <p>Crash reproduction, memory, and startup profiling.</p>
+          <h3>Performance &amp; Accessibility</h3>
+          <p>Mobile performance budgets, tap targets, and contrast checks.</p>
         </div></div>
       </section>
 
@@ -71,20 +72,20 @@
         <h2>Automation Layers</h2>
         <div class="grid">
         <div class="card">
-          <h3>UI Automation</h3>
-          <p>Critical flows across native + hybrid screens.</p>
+          <h3>Mobile Web Automation</h3>
+          <p>Appium-driven Safari/Chrome flows against remotelyamused.com.</p>
         </div>
         <div class="card">
           <h3>Device Farm</h3>
-          <p>Parallel execution with Sauce Labs grid.</p>
+          <p>Parallel execution across iOS and Android devices in Sauce Labs.</p>
         </div>
         <div class="card">
           <h3>Performance</h3>
-          <p>App launch, scroll, and API latency checks.</p>
+          <p>Page load timing, LCP/CLS signals, and network waterfall capture.</p>
         </div>
         <div class="card">
-          <h3>Analytics</h3>
-          <p>Crash logs and session recordings.</p>
+          <h3>Layout &amp; UX Checks</h3>
+          <p>Screenshot checkpoints for responsive layouts and CTA visibility.</p>
         </div></div>
       </section>
 
@@ -93,19 +94,19 @@
         <div class="grid">
         <div class="kpi">
           <span>Coverage</span>
-          <strong>Device matrix completion rate.</strong>
+          <strong>Device matrix coverage for mobile web.</strong>
         </div>
         <div class="kpi">
           <span>Stability</span>
-          <strong>Flake rate and retry reliability.</strong>
+          <strong>Navigation and form success rate across devices.</strong>
         </div>
         <div class="kpi">
           <span>Performance</span>
-          <strong>Launch time and API response tracking.</strong>
+          <strong>LCP/CLS targets and page load time.</strong>
         </div>
         <div class="kpi">
           <span>Quality</span>
-          <strong>UAT acceptance rate.</strong>
+          <strong>CTA visibility and conversion readiness.</strong>
         </div></div>
       </section>
 
@@ -114,66 +115,69 @@
         <div class="pipeline">
         <div class="pipeline-step">
           <span>Stage 1</span>
-          Build + signing + simulator smoke tests.
+          Deploy preview + mobile smoke tests (Safari/Chrome).
         </div>
         <div class="pipeline-step">
           <span>Stage 2</span>
-          Device farm regression across top devices.
+          Device farm regression across top mobile devices.
         </div>
         <div class="pipeline-step">
           <span>Stage 3</span>
-          Performance profiling + crash checks.
+          Performance budgets + network trace capture.
         </div>
         <div class="pipeline-step">
           <span>Stage 4</span>
-          Publish reports to release dashboard.
+          Publish reports and gate release readiness.
         </div></div>
       </section>
 
       <section class="section">
         <h2>Artifacts & Reporting</h2>
-        <div class="flow"><span>Device Matrix</span><span>Video Replays</span><span>Crash Reports</span><span>Performance Profiles</span></div>
+        <div class="flow"><span>Device Matrix</span><span>Video Replays</span><span>Network Traces</span><span>Screenshot Diffs</span></div>
       </section>
 
       <section class="section">
         <h2>Stack In Action</h2>
         <div class="grid">
           <div class="card">
-            <h3>Appium + Java</h3>
-            <p>Native and hybrid flows automated across iOS and Android.</p>
-            <div class="code-block">driver.findElement(AppiumBy.accessibilityId("login"))
-  .click();
-loginPage.signIn(user, pass);
-checkoutPage.placeOrder();</div>
+            <h3>Appium + Java (Mobile Web)</h3>
+            <p>Mobile web flows automated across iOS Safari and Android Chrome.</p>
+            <div class="code-block">DesiredCapabilities caps = new DesiredCapabilities();
+caps.setCapability("platformName", "Android");
+caps.setCapability("browserName", "Chrome");
+caps.setCapability("appium:deviceName", "Google Pixel 7");
+driver = new RemoteWebDriver(new URL(SAUCE_URL), caps);
+driver.get("https://remotelyamused.com/");</div>
           </div>
           <div class="card">
             <h3>TestNG Suite</h3>
-            <p>Smoke + regression packs orchestrated by TestNG.</p>
-            <div class="code-block">&lt;suite name="mobile-regression"&gt;
-  &lt;test name="checkout"&gt;
+            <p>Smoke + regression packs orchestrated for mobile web.</p>
+            <div class="code-block">&lt;suite name="mobile-web-regression"&gt;
+  &lt;test name="remotely-amused"&gt;
     &lt;classes&gt;
-      &lt;class name="tests.CheckoutTests" /&gt;
+      &lt;class name="tests.RemotelyAmusedTests" /&gt;
     &lt;/classes&gt;
   &lt;/test&gt;
 &lt;/suite&gt;</div>
           </div>
           <div class="card">
             <h3>Jenkins Pipeline</h3>
-            <p>Automated build + device farm execution.</p>
-            <div class="code-block">stage('Run Appium') {
+            <p>CI execution for mobile web suites.</p>
+            <div class="code-block">stage('Mobile Web Smoke') {
   steps {
-    sh './gradlew test -Penv=deviceFarm'
+    sh './gradlew test -Ptarget=remotelyamused -Penv=deviceFarm'
   }
 }</div>
           </div>
           <div class="card">
             <h3>Sauce Labs Capabilities</h3>
-            <p>Parallel device coverage with configurable matrix.</p>
+            <p>Parallel device coverage with mobile browser targets.</p>
             <div class="code-block">{
   "platformName": "Android",
+  "browserName": "Chrome",
   "appium:deviceName": "Google Pixel 7",
   "appium:platformVersion": "14",
-  "sauce:options": { "build": "mobile-regression" }
+  "sauce:options": { "build": "mobile-web-regression" }
 }</div>
           </div>
         </div>
@@ -182,17 +186,16 @@ checkoutPage.placeOrder();</div>
       <section class="section">
         <h2>Sample Appium Test</h2>
         <div class="code-block">@Test
-public void checkoutFlow() {
-  loginPage.signIn(user);
-  catalogPage.addItemToCart("Headphones");
-  cartPage.applyPromo("WELCOME10");
-  checkoutPage.placeOrder();
+public void homePageLoads() {
+  driver.get("https://remotelyamused.com/");
+  assertTrue(driver.getTitle().length() > 0);
+  driver.findElement(By.cssSelector("a[href*='contact'], a[href*='book']")).click();
 }</div>
       </section>
 
       <section class="section">
         <h2>Validation Flow</h2>
-        <div class="flow"><span>Build app</span><span>Run smoke</span><span>Execute device lab</span><span>Publish results</span></div>
+        <div class="flow"><span>Start device session</span><span>Run mobile web smoke</span><span>Capture artifacts</span><span>Publish results</span></div>
       </section>
 
       <footer>
