@@ -136,6 +136,40 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Selenium UI Tests</h3>
+            <p>Critical CRM workflows automated in Java.</p>
+            <div class="code-block">WebDriver driver = new ChromeDriver();
+driver.get(baseUrl + "/lightning");
+loginPage.signIn(user, pass);</div>
+          </div>
+          <div class="card">
+            <h3>REST Assured</h3>
+            <p>API tests for integrations and data sync.</p>
+            <div class="code-block">given().auth().oauth2(token)
+  .when().get("/services/data/v58.0/sobjects")
+  .then().statusCode(200);</div>
+          </div>
+          <div class="card">
+            <h3>SOQL Validation</h3>
+            <p>Data accuracy checks after migrations.</p>
+            <div class="code-block">SELECT Id, StageName, Amount
+FROM Opportunity
+WHERE CloseDate = THIS_QUARTER</div>
+          </div>
+          <div class="card">
+            <h3>Salesforce Auth</h3>
+            <p>OAuth flow for automated test users.</p>
+            <div class="code-block">POST /services/oauth2/token
+client_id=...&client_secret=...
+&grant_type=password</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample SOQL Validation</h2>
         <div class="code-block">SELECT Id, StageName, Amount
 FROM Opportunity

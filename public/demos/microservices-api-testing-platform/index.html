@@ -136,6 +136,48 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>REST Assured Tests</h3>
+            <p>Contract and integration validations in Java.</p>
+            <div class="code-block">given().header("Authorization", token)
+  .when().get("/orders")
+  .then().statusCode(200);</div>
+          </div>
+          <div class="card">
+            <h3>Postman + Newman</h3>
+            <p>Collections executed in CI for smoke coverage.</p>
+            <div class="code-block">newman run collections/orders.json   -e environments/staging.json</div>
+          </div>
+          <div class="card">
+            <h3>Pact Contracts</h3>
+            <p>Consumer-driven contracts for each service pair.</p>
+            <div class="code-block">@Pact(consumer = "Orders")
+public RequestResponsePact pact(PactDslWithProvider builder) {
+  return builder.uponReceiving("get orders").path("/orders")
+    .method("GET").willRespondWith().status(200).toPact();
+}</div>
+          </div>
+          <div class="card">
+            <h3>Docker Compose</h3>
+            <p>Spin up dependencies for integration runs.</p>
+            <div class="code-block">services:
+  orders:
+    image: api/orders:latest
+  payments:
+    image: api/payments:latest</div>
+          </div>
+          <div class="card">
+            <h3>Kubernetes Deploy</h3>
+            <p>Validate Helm-based deployments in staging.</p>
+            <div class="code-block">kubectl apply -f k8s/staging.yaml
+kubectl rollout status deploy/orders</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample Pact Test</h2>
         <div class="code-block">PactDslWithProvider pact = new PactDslWithProvider("Orders", "Payments");
 

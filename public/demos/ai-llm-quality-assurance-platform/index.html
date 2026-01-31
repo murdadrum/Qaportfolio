@@ -136,6 +136,48 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>OpenAI API Harness</h3>
+            <p>Regression prompts run with deterministic settings and logging.</p>
+            <div class="code-block">from openai import OpenAI
+
+client = OpenAI()
+response = client.responses.create(
+  model="gpt-4.1-mini",
+  input="Summarize the checkout failure."
+)
+print(response.output_text)</div>
+          </div>
+          <div class="card">
+            <h3>pytest Evaluation Suite</h3>
+            <p>Parameterized tests validate responses across prompt sets.</p>
+            <div class="code-block">@pytest.mark.parametrize("case", cases)
+def test_grounded_answers(case, llm):
+  result = llm.complete(case.prompt)
+  assert case.expected_fact in result.lower()</div>
+          </div>
+          <div class="card">
+            <h3>ML Scoring</h3>
+            <p>Vector similarity scoring tracks response drift.</p>
+            <div class="code-block">from sklearn.metrics.pairwise import cosine_similarity
+
+score = cosine_similarity(vec(result), vec(expected))[0][0]
+assert score > 0.82</div>
+          </div>
+          <div class="card">
+            <h3>Analytics Snapshot</h3>
+            <p>Aggregate metrics for latency, cost, and quality.</p>
+            <div class="code-block">import pandas as pd
+
+summary = df.groupby("suite")["score"].mean()
+print(summary.sort_values())</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample Eval Test</h2>
         <div class="code-block">def test_summary_quality(llm, eval_case):
     result = llm.complete(eval_case.prompt)

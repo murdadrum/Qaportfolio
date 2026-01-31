@@ -136,6 +136,36 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Scrapy Spider</h3>
+            <p>High-throughput crawling with structured parsing.</p>
+            <div class="code-block">class ProductSpider(scrapy.Spider):
+  name = "products"
+  start_urls = ["https://example.com/catalog"]</div>
+          </div>
+          <div class="card">
+            <h3>Selenium Fallback</h3>
+            <p>Dynamic rendering for JS-heavy pages.</p>
+            <div class="code-block">driver.get(url)
+html = driver.page_source</div>
+          </div>
+          <div class="card">
+            <h3>BeautifulSoup Parsing</h3>
+            <p>Clean extraction of structured data.</p>
+            <div class="code-block">soup = BeautifulSoup(html, "html.parser")
+price = soup.select_one(".price").text</div>
+          </div>
+          <div class="card">
+            <h3>MongoDB Storage</h3>
+            <p>Persist results with indexed collections.</p>
+            <div class="code-block">collection.insert_one({"url": url, "price": price})</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample Scrapy Spider</h2>
         <div class="code-block">class ProductSpider(scrapy.Spider):
     name = "products"

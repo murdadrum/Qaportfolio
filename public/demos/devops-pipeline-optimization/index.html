@@ -136,6 +136,50 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Jenkinsfile Stage</h3>
+            <p>Parallel test execution with caching.</p>
+            <div class="code-block">stage('Test') {
+  parallel {
+    stage('unit') { steps { sh 'npm test' } }
+    stage('integration') { steps { sh 'npm run test:api' } }
+  }
+}</div>
+          </div>
+          <div class="card">
+            <h3>GitHub Actions</h3>
+            <p>Release validation with artifacts.</p>
+            <div class="code-block">- name: Run regression
+  run: npm run test:e2e
+- uses: actions/upload-artifact@v4
+  with:
+    name: reports
+    path: reports/</div>
+          </div>
+          <div class="card">
+            <h3>Docker Build</h3>
+            <p>Consistent images for deploys.</p>
+            <div class="code-block">docker build -t app:${GIT_SHA} .
+docker push registry/app:${GIT_SHA}</div>
+          </div>
+          <div class="card">
+            <h3>Terraform Plan</h3>
+            <p>Infrastructure changes gated before apply.</p>
+            <div class="code-block">terraform init
+terraform plan -out=tfplan</div>
+          </div>
+          <div class="card">
+            <h3>Kubernetes Deploy</h3>
+            <p>Canary releases with rollout checks.</p>
+            <div class="code-block">kubectl apply -f k8s/canary.yaml
+kubectl rollout status deploy/app</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample GitHub Actions Step</h2>
         <div class="code-block">- name: Run integration tests
   run: npm run test:integration

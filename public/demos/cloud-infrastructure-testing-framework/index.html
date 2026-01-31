@@ -136,6 +136,61 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Terraform Modules</h3>
+            <p>Reusable modules enforce consistent VPC and IAM standards.</p>
+            <div class="code-block">module "vpc" {
+  source  = "./modules/vpc"
+  project = var.project_id
+  region  = var.region
+  cidr    = "10.20.0.0/16"
+}</div>
+          </div>
+          <div class="card">
+            <h3>GCP Validation</h3>
+            <p>Smoke checks confirm provisioned services before promotion.</p>
+            <div class="code-block">gcloud container clusters describe qa-cluster \
+  --region us-central1 \
+  --format="value(status)"</div>
+          </div>
+          <div class="card">
+            <h3>Python Test Harness</h3>
+            <p>pytest verifies resources and policy compliance automatically.</p>
+            <div class="code-block">def test_no_public_buckets(gcp_storage_client):
+  buckets = gcp_storage_client.list_buckets()
+  assert all("allUsers" not in b.acl for b in buckets)</div>
+          </div>
+          <div class="card">
+            <h3>Dockerized Runner</h3>
+            <p>Consistent execution for Terraform and test tooling.</p>
+            <div class="code-block">FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+CMD ["pytest", "-q"]</div>
+          </div>
+          <div class="card">
+            <h3>Kubernetes Job</h3>
+            <p>Run infra validation as an on-demand test workload.</p>
+            <div class="code-block">apiVersion: batch/v1
+kind: Job
+metadata:
+  name: infra-smoke
+spec:
+  template:
+    spec:
+      containers:
+        - name: tests
+          image: gcr.io/project/infra-tests:latest
+      restartPolicy: Never</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample Policy Check</h2>
         <div class="code-block">package security
 

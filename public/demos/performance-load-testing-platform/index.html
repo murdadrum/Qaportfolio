@@ -136,6 +136,44 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>JMeter CLI Runs</h3>
+            <p>Repeatable load tests with standardized test plans.</p>
+            <div class="code-block">jmeter -n -t tests/load.jmx   -l results.jtl   -e -o reports/</div>
+          </div>
+          <div class="card">
+            <h3>k6 Smoke Script</h3>
+            <p>Fast checks during PR builds and deploy previews.</p>
+            <div class="code-block">import http from 'k6/http';
+import { check } from 'k6';
+
+export default function () {
+  const res = http.get('https://api.example.com/health');
+  check(res, { 'status 200': r => r.status === 200 });
+}</div>
+          </div>
+          <div class="card">
+            <h3>Grafana Dashboard</h3>
+            <p>Real-time latency and throughput monitoring.</p>
+            <div class="code-block">rate(http_requests_total[1m])
+quantile_over_time(0.95, http_request_duration_seconds[5m])</div>
+          </div>
+          <div class="card">
+            <h3>InfluxDB Metrics</h3>
+            <p>Line protocol ingestion for time-series analysis.</p>
+            <div class="code-block">requests,env=staging p95=420,errors=0.4 1735689600</div>
+          </div>
+          <div class="card">
+            <h3>CloudWatch Alarms</h3>
+            <p>Alerting on saturation and error thresholds.</p>
+            <div class="code-block">aws cloudwatch put-metric-alarm   --alarm-name api-p95   --metric-name Latency   --threshold 500</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample k6 Script</h2>
         <div class="code-block">import http from 'k6/http';
 import { check, sleep } from 'k6';

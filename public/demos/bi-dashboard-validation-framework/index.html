@@ -136,6 +136,39 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>SQL Accuracy Checks</h3>
+            <p>Validates metrics against source tables.</p>
+            <div class="code-block">SELECT SUM(revenue) AS total
+FROM analytics.orders
+WHERE order_date BETWEEN :start AND :end</div>
+          </div>
+          <div class="card">
+            <h3>Python Data Validation</h3>
+            <p>Schema and threshold enforcement with Pandera.</p>
+            <div class="code-block">import pandera as pa
+
+schema = pa.DataFrameSchema({
+  "revenue": pa.Column(float, checks=pa.Check.ge(0))
+})</div>
+          </div>
+          <div class="card">
+            <h3>Looker API Query</h3>
+            <p>Fetches dashboard results for comparison.</p>
+            <div class="code-block">curl -H "Authorization: token $LOOKER_TOKEN"   https://looker.example.com/api/4.0/looks/123/run/json</div>
+          </div>
+          <div class="card">
+            <h3>Selenium Visual Checks</h3>
+            <p>Screenshot diffs to catch visual regressions.</p>
+            <div class="code-block">driver.get(dashboardUrl);
+byte[] png = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample SQL Check</h2>
         <div class="code-block">SELECT
   SUM(revenue) AS total_revenue

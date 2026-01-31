@@ -136,6 +136,50 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Appium + Java</h3>
+            <p>Native and hybrid flows automated across iOS and Android.</p>
+            <div class="code-block">driver.findElement(AppiumBy.accessibilityId("login"))
+  .click();
+loginPage.signIn(user, pass);
+checkoutPage.placeOrder();</div>
+          </div>
+          <div class="card">
+            <h3>TestNG Suite</h3>
+            <p>Smoke + regression packs orchestrated by TestNG.</p>
+            <div class="code-block">&lt;suite name="mobile-regression"&gt;
+  &lt;test name="checkout"&gt;
+    &lt;classes&gt;
+      &lt;class name="tests.CheckoutTests" /&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt;
+&lt;/suite&gt;</div>
+          </div>
+          <div class="card">
+            <h3>Jenkins Pipeline</h3>
+            <p>Automated build + device farm execution.</p>
+            <div class="code-block">stage('Run Appium') {
+  steps {
+    sh './gradlew test -Penv=deviceFarm'
+  }
+}</div>
+          </div>
+          <div class="card">
+            <h3>Sauce Labs Capabilities</h3>
+            <p>Parallel device coverage with configurable matrix.</p>
+            <div class="code-block">{
+  "platformName": "Android",
+  "appium:deviceName": "Google Pixel 7",
+  "appium:platformVersion": "14",
+  "sauce:options": { "build": "mobile-regression" }
+}</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample Appium Test</h2>
         <div class="code-block">@Test
 public void checkoutFlow() {

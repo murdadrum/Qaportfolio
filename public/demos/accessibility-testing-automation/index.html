@@ -136,6 +136,40 @@
       </section>
 
       <section class="section">
+        <h2>Stack In Action</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Playwright + axe-core</h3>
+            <p>Automated WCAG checks in UI tests.</p>
+            <div class="code-block">import { injectAxe, checkA11y } from 'axe-playwright';
+
+test('checkout is accessible', async ({ page }) => {
+  await page.goto('/checkout');
+  await injectAxe(page);
+  await checkA11y(page);
+});</div>
+          </div>
+          <div class="card">
+            <h3>Pa11y CLI</h3>
+            <p>Batch scans for templates and flows.</p>
+            <div class="code-block">pa11y https://staging.example.com/checkout   --standard WCAG2AA</div>
+          </div>
+          <div class="card">
+            <h3>Lighthouse CI</h3>
+            <p>Automated performance + a11y scoring in CI.</p>
+            <div class="code-block">ci:
+  collect:
+    url: ["https://staging.example.com/"]</div>
+          </div>
+          <div class="card">
+            <h3>ARIA Validation</h3>
+            <p>Ensure proper roles and labels in components.</p>
+            <div class="code-block">&lt;button aria-label="Apply promo"&gt;Apply&lt;/button&gt;</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
         <h2>Sample Playwright + axe</h2>
         <div class="code-block">import { injectAxe, checkA11y } from 'axe-playwright';
 
