@@ -23,7 +23,7 @@ export function Contact() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           <a
-            href="mailto:qa.engineer@example.com"
+            href="mailto:josh@remotelyamused.com"
             className="flex flex-col items-center gap-3 p-6 bg-gray-700 rounded-lg hover:bg-gray-600 hover:shadow-xl transition-all"
             aria-label="Send email"
           >
@@ -32,7 +32,7 @@ export function Contact() {
             </div>
             <span className="font-semibold text-white">Email</span>
             <span className="text-sm text-gray-400">
-              qa.engineer@example.com
+              josh@remotelyamused.com
             </span>
           </a>
 
@@ -96,7 +96,7 @@ export function Contact() {
             your software products.
           </p>
           <a
-            href="mailto:qa.engineer@example.com"
+            href="mailto:josh@remotelyamused.com"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-500 transition-colors shadow-lg"
             aria-label="Send me a message"
           >
