@@ -7,6 +7,11 @@ from playwright.sync_api import expect
 
 BASE_URL = os.getenv("BASE_URL", "http://localhost:5173").rstrip("/")
 CHECK_EXTERNAL = os.getenv("CHECK_EXTERNAL", "0") == "1"
+EXTERNAL_SKIP_DOMAINS = {
+    domain.strip().lower()
+    for domain in os.getenv("EXTERNAL_SKIP_DOMAINS", "linkedin.com").split(",")
+    if domain.strip()
+}
 
 SECTION_IDS = ["hero", "about", "skills", "expertise", "projects", "contact"]
 
@@ -15,6 +20,12 @@ def _is_external(url: str) -> bool:
     base = urlparse(BASE_URL)
     target = urlparse(url)
     return bool(target.netloc) and target.netloc != base.netloc
+
+
+def _is_skipped_external(url: str) -> bool:
+    target = urlparse(url)
+    domain = target.netloc.lower()
+    return any(domain == skip or domain.endswith(f".{skip}") for skip in EXTERNAL_SKIP_DOMAINS)
 
 
 def _normalize_href(href: str) -> str:
@@ -94,6 +105,8 @@ def test_links_are_valid(viewport_context):
 
         if _is_external(url):
             if CHECK_EXTERNAL:
+                if _is_skipped_external(url):
+                    continue
                 resp = page.request.get(url, timeout=10_000)
                 if resp.status >= 400:
                     broken.append(f"External link {url} returned {resp.status}")

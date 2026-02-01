@@ -1,6 +1,9 @@
 import { ExternalLink, Github } from "lucide-react";
 
 export function Projects() {
+  const baseUrl = import.meta.env.BASE_URL;
+  const withBase = (path: string) => `${baseUrl}${path.replace(/^\//, "")}`;
+
   const projects = [
     {
       title: "Enterprise E-Commerce Test Automation Suite",
@@ -8,7 +11,7 @@ export function Projects() {
         "Comprehensive end-to-end testing framework using Playwright and BDD, integrated with CI/CD pipeline.",
       repoUrl:
         "https://github.com/murdadrum/enterprise-ecommerce-test-automation-suite",
-      demoUrl: "/demos/enterprise-ecommerce-test-automation-suite",
+      demoPath: "demos/enterprise-ecommerce-test-automation-suite",
       technologies: [
         "Playwright",
         "TypeScript",
@@ -29,7 +32,7 @@ export function Projects() {
         "Built automated testing infrastructure for GCP environments using Terraform and containerized test suites. Validated infrastructure deployments and cloud security configurations.",
       repoUrl:
         "https://github.com/murdadrum/cloud-infrastructure-testing-framework",
-      demoUrl: "/demos/cloud-infrastructure-testing-framework",
+      demoPath: "demos/cloud-infrastructure-testing-framework",
       technologies: ["Terraform", "GCP", "Docker", "Python", "Kubernetes"],
       highlights: [
         "Infrastructure as Code validation",
@@ -44,7 +47,7 @@ export function Projects() {
         "Developed comprehensive testing framework for Large Language Model applications, including prompt testing, response validation, and bias detection.",
       repoUrl:
         "https://github.com/murdadrum/ai-llm-quality-assurance-platform",
-      demoUrl: "/demos/ai-llm-quality-assurance-platform",
+      demoPath: "demos/ai-llm-quality-assurance-platform",
       technologies: [
         "Python",
         "OpenAI API",
@@ -64,7 +67,7 @@ export function Projects() {
       description:
         "Created cross-platform mobile testing solution using Appium for iOS and Android applications, with integration to CI/CD pipelines.",
       repoUrl: "https://github.com/murdadrum/mobile-app-testing-framework",
-      demoUrl: "/demos/mobile-app-testing-framework",
+      demoPath: "demos/mobile-app-testing-framework",
       technologies: ["Appium", "Java", "TestNG", "Jenkins", "Sauce Labs"],
       highlights: [
         "Native & hybrid app testing",
@@ -79,7 +82,7 @@ export function Projects() {
         "Designed and implemented comprehensive performance testing suite for high-traffic web applications, identifying bottlenecks and optimization opportunities.",
       repoUrl:
         "https://github.com/murdadrum/performance-load-testing-platform",
-      demoUrl: "/demos/performance-load-testing-platform",
+      demoPath: "demos/performance-load-testing-platform",
       technologies: ["JMeter", "K6", "Grafana", "InfluxDB", "AWS CloudWatch"],
       highlights: [
         "Load testing scenarios",
@@ -93,7 +96,7 @@ export function Projects() {
       description:
         "Implemented automated security testing pipeline using OWASP ZAP and custom scripts to identify vulnerabilities in web applications.",
       repoUrl: "https://github.com/murdadrum/security-testing-automation",
-      demoUrl: "/demos/security-testing-automation",
+      demoPath: "demos/security-testing-automation",
       technologies: [
         "OWASP ZAP",
         "Burp Suite",
@@ -113,7 +116,7 @@ export function Projects() {
       description:
         "Developed comprehensive testing framework for Salesforce implementations, including custom objects, workflows, and integrations.",
       repoUrl: "https://github.com/murdadrum/salesforce-crm-testing-suite",
-      demoUrl: "/demos/salesforce-crm-testing-suite",
+      demoPath: "demos/salesforce-crm-testing-suite",
       technologies: [
         "Selenium",
         "Java",
@@ -134,7 +137,7 @@ export function Projects() {
         "Created automated validation system for business intelligence dashboards and data visualizations using Looker and custom analytics.",
       repoUrl:
         "https://github.com/murdadrum/bi-dashboard-validation-framework",
-      demoUrl: "/demos/bi-dashboard-validation-framework",
+      demoPath: "demos/bi-dashboard-validation-framework",
       technologies: ["Looker", "SQL", "Python", "Data Validation", "Selenium"],
       highlights: [
         "Data accuracy validation",
@@ -148,7 +151,7 @@ export function Projects() {
       description:
         "Built robust web crawling and scraping solution with automated testing and monitoring capabilities for data quality assurance.",
       repoUrl: "https://github.com/murdadrum/web-crawler-data-scraper",
-      demoUrl: "/demos/web-crawler-data-scraper",
+      demoPath: "demos/web-crawler-data-scraper",
       technologies: [
         "Python",
         "Scrapy",
@@ -169,7 +172,7 @@ export function Projects() {
         "Comprehensive API testing framework for microservices architecture, including contract testing and service virtualization.",
       repoUrl:
         "https://github.com/murdadrum/microservices-api-testing-platform",
-      demoUrl: "/demos/microservices-api-testing-platform",
+      demoPath: "demos/microservices-api-testing-platform",
       technologies: ["REST Assured", "Postman", "Pact", "Docker", "Kubernetes"],
       highlights: [
         "Contract testing",
@@ -183,7 +186,7 @@ export function Projects() {
       description:
         "Implemented automated accessibility testing using axe-core and custom validators to ensure WCAG 2.1 AA compliance.",
       repoUrl: "https://github.com/murdadrum/accessibility-testing-automation",
-      demoUrl: "/demos/accessibility-testing-automation",
+      demoPath: "demos/accessibility-testing-automation",
       technologies: ["axe-core", "Pa11y", "Lighthouse", "Playwright", "ARIA"],
       highlights: [
         "WCAG 2.1 AA/AAA validation",
@@ -197,7 +200,7 @@ export function Projects() {
       description:
         "Optimized and enhanced CI/CD pipelines with comprehensive testing stages, reducing deployment time and increasing reliability.",
       repoUrl: "https://github.com/murdadrum/devops-pipeline-optimization",
-      demoUrl: "/demos/devops-pipeline-optimization",
+      demoPath: "demos/devops-pipeline-optimization",
       technologies: [
         "Jenkins",
         "GitHub Actions",
@@ -291,7 +294,7 @@ export function Projects() {
                 <a
                   className="flex items-center gap-2 text-sm text-gray-400 hover:text-blue-400 transition-colors"
                   aria-label={`View live demo of ${project.title}`}
-                  href={project.demoUrl}
+                  href={withBase(project.demoPath)}
                 >
                   <ExternalLink size={16} aria-hidden="true" />
                   <span>Live Demo</span>
