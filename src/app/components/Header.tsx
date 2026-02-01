@@ -22,7 +22,7 @@ export function Header() {
               className="text-xl font-semibold text-white hover:text-blue-400 transition-colors"
               aria-label="Go to top of page"
             >
-              QA Engineer Portfolio
+              Josh/Barteaux
             </button>
           </div>
           
