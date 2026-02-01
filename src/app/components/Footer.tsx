@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-center md:text-left">
             <p className="text-gray-300">
-              © {currentYear} Software QA Engineer Portfolio. All rights reserved.
+              © {currentYear} Josh Barteaux, Get Up amd Do Something LLC. All rights reserved.
             </p>
           </div>
           
