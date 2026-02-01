@@ -5,6 +5,12 @@
 
 ## Running the code
 
+If you just cloned the repo, initialize submodules first:
+
+```bash
+git submodule update --init --recursive
+```
+
 Run `npm i` to install the dependencies.
 
 Run `npm run dev` to start the development server.
@@ -28,5 +34,25 @@ Run pytest from the repo root:
 
 ```bash
 pytest
+```
+
+### Playwright UI + link validation
+
+Start the dev server in one terminal:
+
+```bash
+npm run dev
+```
+
+Then run the Playwright baseline test in another:
+
+```bash
+BASE_URL=http://localhost:5173 pytest tests/playwright/test_ui_links.py
+```
+
+To include external link checks:
+
+```bash
+CHECK_EXTERNAL=1 BASE_URL=http://localhost:5173 pytest tests/playwright/test_ui_links.py
 ```
   
