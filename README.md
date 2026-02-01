@@ -3,6 +3,10 @@
 
   This is a code bundle for QA Portfolio. The original project is available at https://www.figma.com/design/WImZEHDhCKiSNquhF0ZAgi/QA-Portfolio.
 
+## Live site
+
+https://murdadrum.github.io/Qaportfolio/
+
 ## Running the code
 
 If you just cloned the repo, initialize submodules first:
